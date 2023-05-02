@@ -1,0 +1,49 @@
+<div class="main-section container d-flex justify-content-center align-items-center py-5">
+    <div class="signIn-container border rounded p-4">
+        <div>
+            <h1 class="h2 fw-bold">Sign in</h1>
+            <div  *ngIf="!displaySignInForm" class="d-flex flex-column justify-content-center align-items-center">
+                <button (click)="displaySignInForm=true;" class="btn btn-light border w-100 mt-3 my-2">Sign in with TMDB</button>
+                <!-- <button class="btn btn-light border w-100">Sign in with Google</button> -->
+                <asl-google-signin-button *ngIf="!loggedIn" type="standard" size="medium" color="warn" (click)="signInWithGoogle()"></asl-google-signin-button>
+            </div>
+            <form *ngIf="displaySignInForm" [formGroup]="signInForm" (ngSubmit)="submitSignInForm(signInForm)">
+                <div class="mb-3">
+                    <!-- userName, email, password, country, gender, birthDate -->
+                    <label for="email" class="fw-bold">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="email">
+                    <div *ngIf="signInForm.get('email')?.errors != null 
+                    && signInForm.get('email')?.touched" class="alert alert-danger p-1 mt-1">
+                        <p *ngIf="signInForm.get('email')?.errors?.['required']">Email is required</p>
+                        <p *ngIf="signInForm.get('email')?.errors?.['email']">Invalid email format</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <!-- userName, email, password, country, gender, birthDate -->
+                    <label for="password" class="fw-bold">Password</label>
+                    <input type="password" formControlName="password" class="form-control" id="password">
+                    <div *ngIf="signInForm.get('password')?.errors != null 
+                    && signInForm.get('password')?.touched" class="alert alert-danger p-1 mt-1">
+                        <p *ngIf="signInForm.get('password')?.errors?.['required']">Password is required</p>
+                        <p *ngIf="signInForm.get('password')?.errors?.['pattern']">Password must start with capital char or number, and minLength is 3</p>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="signInForm.invalid" class="btn btn-primary w-100">Sign in</button>
+                <div *ngIf="error"  class="alert alert-danger p-1 mt-1">
+                    <p>{{error}}</p>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="divider position-relative d-flex justify-content-center w-100 mt-4 mb-3">
+                <span class="fw-bold ">or</span>
+            </div>
+            <div>
+                <button routerLink="/signUp" class="btn btn-primary w-100">Create a New Account</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button> -->
+<!-- <asl-google-signin-button *ngIf="!loggedIn" color="warn" class="btn btn-light border w-100" (click)="signInWithGoogle()">Login</asl-google-signin-button> -->

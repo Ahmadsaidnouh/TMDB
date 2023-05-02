@@ -1,0 +1,37 @@
+.register-container {
+    width: 400px;
+}
+
+.divider:before {
+    content: "";
+    display: block;
+    background-color: black;
+    width: calc(50% - 20px);
+    height: 1px;
+    position: absolute;
+    top: calc(50% + 1px);
+    left: 0px;
+}
+.divider:after {
+    content: "";
+    display: block;
+    background-color: black;
+    width: calc(50% - 20px);
+    height: 1px;
+    position: absolute;
+    top: calc(50% + 1px);
+    right: 0px;
+}
+
+.sign-in-btn {
+    color: #0066c0;
+}
+.sign-in-btn:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width:400px) {
+    .register-container {
+        width: auto;
+    }
+}

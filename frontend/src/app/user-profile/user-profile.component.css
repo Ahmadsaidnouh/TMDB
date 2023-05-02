@@ -1,0 +1,56 @@
+.profile-container {
+    background-image: radial-gradient(at 30% top, #072e46 0%, rgb(3,37,65) 70%);
+    color: white;
+}
+
+.profile-content {
+    background: url(https://www.themoviedb.org/assets/2/v4/account_pipes/blue-ad2008f9b378cedc9a1c31b6be9ee3c18589137e4495ed05586c3cb09a95d3f2.svg);
+    background-position: center center;
+    background-size: cover;
+}
+.inner-content {
+    padding: 40px 0px;
+
+}
+/* .profile-img-container {
+
+} */
+.profile-img-tempo {
+    background-color: #0177d2;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 75px;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.user-name h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+.join-date p{
+    font-size: 17px;
+    opacity: 0.7;
+    margin-bottom: 1px !important;
+}
+.profile-item p {
+    background-color: #e4e7eb;
+    padding: 5px;
+    border-radius: 5px;
+}
+@media screen and (max-width:500px) {
+    .user-name h2 {
+        font-size: 20px;
+    }
+    .join-date p{
+        font-size: 14px;
+    }
+    .profile-img-tempo {
+        height: 110px;
+        width: 110px;
+    }
+}

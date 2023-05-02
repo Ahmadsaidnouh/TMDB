@@ -1,0 +1,9 @@
+.body-margin-top {
+    margin-top: 65px;
+}
+
+@media screen and (max-width:1010px) {
+    .body-margin-top {
+        margin-top: 73px;
+    }
+}

@@ -1,0 +1,53 @@
+<section>
+    <div class="background-img" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+    </div>
+    <div class="background-filter position-absolute w-100 left-0">
+        <div class="container-fluid px-md-5 px-3 pt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-12 text-center">
+                    <img class="rounded pointer w-100 img-width" loading="lazy"
+                        [src]="imgPrefix+movie.poster_path" [alt]="movie.title" [title]="movie.title">
+                </div>
+                <div class="col-lg-9 col-12 mt-lg-0 mt-5 mb-lg-0 mb-3 text-white">
+                    <div class=" mb-3 text-lg-start text-center">
+                        <h1 class="fw-bold">{{movie.title}} <span>({{getReleaseYear()}})</span></h1>
+                        <p>{{getReleaseDate()}} <span class="dot mx-2"></span> {{getGenres()}} <span class="dot mx-2"></span> {{getDuration()}}</p>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 justify-content-lg-start justify-content-center">
+                        <!-- <i class="rate-star fa-solid fa-star"></i> -->
+                        <div class="rate d-flex justify-content-center align-items-center me-2">
+                            <p class="text-white m-0 movie-vote position-relative">{{ceil()}} <small
+                                    class="percent position-absolute top-0">%</small></p>
+                        </div>
+                        <p class="me-3 fw-bold">User<br>Score</p>
+                        <div class="options d-flex ">
+                            <div
+                                class="option-list me-2 icon d-flex justify-content-center align-items-center pointer position-relative">
+                                <i class="fa-solid fa-heart"></i>
+                                <span class="position-absolute left-0 rounded p-2 tip">
+                                    <p *ngIf="isSignedIn">Favorite</p>
+                                    <p *ngIf="!isSignedIn">You have to sign in.</p>
+                                </span>
+                            </div>
+                            <div
+                                class="option-list me-2 icon d-flex justify-content-center align-items-center pointer position-relative">
+                                <i class="fa-solid fa-bookmark"></i>
+                                <span class="position-absolute right-0 rounded p-2 tip">
+                                    <p *ngIf="isSignedIn">Watchlist</p>
+                                    <p *ngIf="!isSignedIn">You have to sign in.</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <em>{{movie?.tagline}}</em>
+                    </div>
+                    <div>
+                        <p class="fw-bold">Overview</p>
+                        <p>{{movie?.overview}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

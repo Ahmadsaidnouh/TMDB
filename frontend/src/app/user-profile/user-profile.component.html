@@ -1,0 +1,51 @@
+<section class="my-1 position-relative">
+    <!-- <div class="position-absolute filter trending">
+    </div> -->
+    <div class="profile-container">
+        <div class="profile-content">
+            <div class="container-fluid px-md-5 px-3">
+                <div class="inner-content">
+                    <div class="d-flex align-items-center">
+                        <div class="me-4">
+                            <div class="profile-img-tempo">{{getUserName()[0]}}</div>
+                        </div>
+                        <div class="d-flex align-items-md-end flex-md-row flex-column">
+                            <div class="user-name me-3">
+                                <h2 class="m-0">{{getUserName()}}</h2>
+                            </div>
+                            <div class="join-date">
+                                <p class="m-0">Member since {{getJoinDate()}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid px-md-5 px-3">
+        <div class="profile-details-container mt-4">
+            <h1 class="mb-4 fw-bold">Account Info</h1>
+            <div class="profile-item mb-3">
+                <h4 class="mb-0">User name</h4>
+                <p>{{getUserName()}}</p>                
+            </div>
+            <div class="profile-item mb-3">
+                <h4 class="mb-0">Email</h4>
+                <p>{{user.email}}</p>                
+            </div>
+            <div class="profile-item mb-3">
+                <h4 class="mb-0">Country</h4>
+                <p>{{user.country ? user.country : 'Not specified yet'}}</p>                
+            </div>
+            <div class="profile-item mb-3">
+                <h4 class="mb-0">Gender</h4>
+                <p>{{user.gender ? user.gender : 'Not specified yet'}}</p>                
+            </div>
+            <div class="profile-item mb-3">
+                <h4 class="mb-0">Birthdate</h4>
+                <p>{{user.birthDate ? user.birthDate : 'Not specified yet'}}</p>                
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

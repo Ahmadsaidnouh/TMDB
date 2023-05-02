@@ -1,0 +1,49 @@
+<section class="my-3 position-relative">
+    <!-- <div class="position-absolute filter trending">
+    </div> -->
+    <div class="container-fluid px-md-5 px-3 pt-3">
+        <div class="py-3">
+            <h3 class="fw-bold me-3">{{categoryName}} Movies</h3>
+        </div>
+        <div class="row custom-scrollbar justify-content-center ">
+            <div class="col-lg-2 col-md-3 col-6 mb-4 " *ngFor="let movie of movies">
+                <div class="rounded overflow-hidden position-relative h-100 border shadow">
+                    <div (click)="toggleOptions($event)" class="options pointer d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="d-none options-list position-absolute rounded p-2 bg-white border overflow-hidden prevent-select">
+                        <ul class="p-0 m-0">
+                            <li *ngIf="isSignedIn" class="row border-bottom pointer">
+                                <small><i class="fa-solid fa-heart me-2 icons"></i>Favorite</small>
+                            </li>
+                            <li *ngIf="isSignedIn" class="row pt-1 pointer">
+                                <small><i class="fa-solid fa-bookmark me-2 icons"></i>Watchlist</small>
+                            </li>
+                            <li *ngIf="!isSignedIn" class="row pt-1">
+                                <small>You have to <span routerLink="/signIn" class="fw-bold pointer">Sign In</span></small>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <img (click)="displayMovieDetails(movie.id, movie.title)" class="pointer w-100" loading="lazy"
+                            [src]="imgPrefix+movie.poster_path" [alt]="movie.alt" [title]="movie.title">
+                    </div>
+                    <div>
+                        <div class="rate d-flex justify-content-center align-items-center">
+                            <p class="text-white m-0 movie-vote position-relative">{{ceil(movie.vote_average*10)}} <small
+                                    class="percent position-absolute top-0">%</small></p>
+                        </div>
+                    </div>
+                    <span (click)="displayMovieDetails(movie.id, movie.title)"
+                        class="px-2 text-black  pointer movie-title">{{movie.title}}</span>
+                    <span class="px-2 mt-1 text-muted date">{{reformatReleaseDate(movie.release_date)}}</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button (click)="loadMore()" class="mt-4 btn btn-primary w-100 fw-bold">Load More</button>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

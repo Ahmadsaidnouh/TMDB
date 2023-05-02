@@ -1,0 +1,172 @@
+header {
+    background-image: url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/hreiLoPysWG79TsyQgMzFKaOTF5.jpg');
+    min-height: 300px;
+    height: calc(100vh / 1);
+    max-height: 360px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: #fff;
+}
+.trending {
+    /* left: 0; */
+    top: 0;
+    right: 0;
+    /* bottom: 0; */
+    z-index: 2;
+    width: 15%;
+    height: 90%;
+    /* -webkit-box-shadow: inset -121px 0px 87px -47px rgba(255,255,255,1);
+-moz-box-shadow: inset -121px 0px 87px -47px rgba(255,255,255,1);
+box-shadow: inset -121px 0px 87px -47px rgba(255,255,255,1); */
+    /* background-color: aqua; */
+    box-shadow: -80px 0px 27px 7px rgba(255,255,255,0.75) inset;
+    -webkit-box-shadow: -80px 0px 27px 7px rgba(255,255,255,0.75) inset;
+    -moz-box-shadow: -80px 0px 27px 7px rgba(255,255,255,0.75) inset;
+}
+/* @media  screen and (max-width:650px) {
+    .trending {
+        right: -40px
+    }
+} */
+
+/* .rate-star {
+    color: rgb(236, 240, 10);
+    border: rgb(182, 182, 46) 2px solid;
+} */
+
+.rate {
+    width: 34px;
+    height: 34px;
+    /* background: conic-gradient(#7d2ae8 90deg, #ededed 0); */
+    background-color: black;
+    border-radius: 50%;
+    position: relative; 
+    left: 10px;
+    top: -17px;
+    border: green 2px solid;
+    z-index: 1000;
+    /* background: rgb(0,138,139); */
+/* background: radial-gradient(45%, rgba(0,138,139,1) 0%, rgba(77,0,79,1) 0%); */
+}
+
+.time-window-container {
+    border: #032541 1px solid;
+    border-radius: 14px;
+}
+.time-window-active {
+    background-color: #032541;
+    color: white;
+    border-radius: 15px;
+}
+.movie-title {
+    margin-top: -10px !important;
+    font-weight: bolder;
+    font-size: 13px;
+    display: block;
+    overflow-wrap: break-word;
+}
+.movie-title:hover {
+    color: rgb(1,180,228) !important;
+}
+
+.percent {
+    font-size: 7px;
+    vertical-align: center;
+}
+.movie-vote {
+    font-size: 11px;
+    font-weight: bold;
+
+}
+
+.date {
+    font-size: 14px;
+}
+
+/* .custom-scrollbar{
+    border-radius: 20px !important;
+    scrollbar-width: thin;
+} */
+/* ::-webkit-scrollbar-track {
+    background-color: #f6f6f6;
+} */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+.options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #c1c0c0cf;
+}
+.options:hover {
+    background-color: #00b8ff;
+}
+.options-list {
+    top: 40px;
+    right: 3px;
+    min-width: 115px;
+}
+.options-list li :hover {
+    background-color: #032541 !important;
+    color: white !important;
+}
+.icons {
+    width: 20px !important;
+    text-align: center;
+}
+
+
+
+.shadow {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* div .rate {
+    margin-top: -25px;
+} */
+
+/* .outer {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #9273B0;
+    margin: 10px;
+    cursor:pointer;
+  }
+  
+  .inner {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-out;
+  }
+  
+  .outer:hover .inner {
+    width: 90%;
+    height: 90%;
+  } */

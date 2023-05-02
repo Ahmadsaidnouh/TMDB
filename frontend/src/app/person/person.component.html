@@ -1,0 +1,28 @@
+<section class="my-3 position-relative">
+    <!-- <div class="position-absolute filter trending">
+    </div> -->
+    <div class="container-fluid px-md-5 px-3 pt-3">
+        <div class="py-3">
+            <h3 class="fw-bold me-3">Popular People</h3>
+        </div>
+        <div class="row custom-scrollbar justify-content-center ">
+            <div class="col-lg-2 col-md-3 col-6 mb-4 " *ngFor="let person of people">
+                <div class="rounded overflow-hidden position-relative h-100 border shadow">
+                    
+                    
+                    <div>
+                        <img (click)="displayPersonDetails(person.id, person.name)" class="pointer w-100" loading="lazy"
+                            [src]="imgPrefix+person.profile_path" [alt]="person.alt" [title]="person.name">
+                    </div>
+                    <span (click)="displayPersonDetails(person.id, person.name)"
+                        class="p-2 text-black pointer movie-title">{{person.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button (click)="loadMore()" class="mt-4 btn btn-primary w-100 fw-bold">Load More</button>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
+

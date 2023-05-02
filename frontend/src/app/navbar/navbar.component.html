@@ -1,0 +1,174 @@
+<nav id="nav1" class="main-bg d-">
+    <div class="container-fluid px-md-5 px-3 py-3">
+        <div class="row">
+            <div class="col-7">
+                <div class="d-flex">
+                    <div routerLink="/home">
+                        <img class="pointer" src="assets/logo/logo1.png" alt="logo" srcset="">
+                    </div>
+                    <ul class="my-0 d-flex align-items-center">
+                        <li class="nav-options mx-2 position-relative pointer">
+                            <span>Movies</span>
+                            <div>
+                                <ul class="dropdown position-absolute border bg-white rounded px-0 prevent-select">
+                                    <li routerLink="/movie" class="text-black py-2 px-3">Popular</li>
+                                    <li routerLink="/movie/now-playing" class="text-black pb-2 px-3">Now Playing</li>
+                                    <li routerLink="/movie/upcoming" class="text-black pb-2 px-3">Upcoming</li>
+                                    <li routerLink="/movie/top-rated" class="text-black pb-2 px-3">Top Rated</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-options mx-2 position-relative pointer">
+                            <span>TV Shows</span>
+                            <div>
+                                <ul class="dropdown position-absolute border bg-white rounded px-0 prevent-select">
+                                    <li routerLink="/tv" class="text-black py-2  px-3">Popular</li>
+                                    <li routerLink="/tv/airing-today" class="text-black pb-2  px-3">Airing Today</li>
+                                    <li routerLink="/tv/on-tv" class="text-black pb-2  px-3">On TV</li>
+                                    <li routerLink="/tv/top-rated" class="text-black pb-2  px-3">Top Rated</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-options mx-2 position-relative pointer">
+                            <span>People</span>
+                            <div>
+                                <ul class="dropdown position-absolute border bg-white rounded px-0 prevent-select">
+                                    <li routerLink="/person" class="text-black py-2  px-3">Popular People</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="d-flex h-100 align-items-center justify-content-end">
+                    <a *ngIf="!isSignedIn" routerLink="/signIn" class="mx-3 pointer fw-bold" href="">Sign In</a>
+                    <div *ngIf="isSignedIn" class="pointer position-relative">
+                        <i class="fa-solid fa-user text-white fs-5" (click)="largeProfileInfoToggle=!largeProfileInfoToggle" ></i>
+                        <div *ngIf="largeProfileInfoToggle == true" class="position-absolute user-info-lg prevent-select">
+                            <ul class="overflow-hidden bg-white rounded border px-0">
+                                <li routerLink="/userProfile" (click)="largeProfileInfoToggle=!largeProfileInfoToggle" class="p-3 border-bottom">
+                                    <p class="mb-0 text-black fw-bold">{{userName}}</p>
+                                    <small class="text-muted">View Profile</small>
+                                </li>
+                                <li routerLink="/watchlist" (click)="largeProfileInfoToggle=!largeProfileInfoToggle" class="text-muted p-3 pb-2">Watchlist</li>
+                                <li routerLink="/userSettings" (click)="largeProfileInfoToggle=!largeProfileInfoToggle" class="text-muted p-3">Settings</li>
+                                <li (click)="largeProfileInfoToggle=!largeProfileInfoToggle;signOut()" class="text-muted p-3 border-top">Sign Out</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ms-3 pointer">
+                        <i *ngIf="search" (click)="search=!search"
+                            class="fa-solid fa-magnifying-glass mag-bg-color fs-4"></i>
+                        <i *ngIf="!search" (click)="search=!search" class="fa-solid fa-x text-white fs-4">
+                        </i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!search" class="search-box w-100">
+        <input class="w-100 py-3 px-2 form-control" type="text" placeholder="Search for a movie, tv show, person...">
+    </div>
+</nav>
+<nav id="nav2" class="d-none">
+    <div class="main-bg">
+        <div class="container-fluid px-md-5 px-3 py-3">
+            <div class="row">
+                <div class="col-5">
+                    <div class="d-flex h-100 align-items-center justify-content-start">
+                        <i (click)="smallNavBtnToggle=!smallNavBtnToggle"
+                            class="fa-solid fa-bars text-white fs-4 pointer"></i>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div routerLink="/home" class="d-flex justify-content-center">
+                        <img class="pointer w- logo2-width" src="assets/logo/logo2.png" alt="logo" srcset="">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="d-flex h-100 align-items-center justify-content-end">
+                        <div class="pointer position-relative">
+                            <i (click)="smallProfileInfoToggle=!smallProfileInfoToggle"
+                                class="fa-solid fa-user text-white fs-5"></i>
+                            <!-- <img src="" alt=""> user profile pic -->
+                            <div *ngIf="smallProfileInfoToggle" class="position-absolute user-info">
+                                <ul class="overflow-hidden bg-white rounded border px-0 prevent-select">
+                                    <li *ngIf="!isSignedIn" routerLink="/signIn" (click)="smallProfileInfoToggle=!smallProfileInfoToggle" class="text-muted p-3 border-bottom">Sign In</li>
+                                    <!--  -->
+                                    <div *ngIf="isSignedIn">
+                                        <li routerLink="/userProfile" (click)="smallProfileInfoToggle=!smallProfileInfoToggle" class="p-3 border-bottom">
+                                            <p class="mb-0 text-black fw-bold">{{userName}}</p>
+                                            <small class="text-muted">View Profile</small>
+                                        </li>
+                                        <li routerLink="/watchlist" (click)="smallProfileInfoToggle=!smallProfileInfoToggle" class="text-muted p-3 pb-2">Watchlist</li>
+                                        <li routerLink="/userSettings" (click)="smallProfileInfoToggle=!smallProfileInfoToggle" class="text-muted p-3">Settings</li>
+                                        <li (click)="smallProfileInfoToggle=!smallProfileInfoToggle;signOut()" class="text-muted p-3 border-top">Sign Out</li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ms-4 pointer">
+                            <i *ngIf="search" (click)="search=!search"
+                                class="fa-solid fa-magnifying-glass mag-bg-color fs-4"></i>
+                            <i *ngIf="!search" (click)="search=!search" class="fa-solid fa-x text-white fs-4">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!search" class="search-box w-100">
+            <input class="w-100 py-3 px-2 form-control" type="text"
+                placeholder="Search for a movie, tv show, person...">
+        </div>
+    </div>
+    <div *ngIf="smallNavBtnToggle" class="w-100 small-dropdown px-3">
+        <!-- movies, tv shows, people -->
+        <ul class="small-nav-content prevent-select">
+            <li class="pt-3">
+                <h2 class="pointer" (click)="isSmallMovieClicked=!isSmallMovieClicked">Movies</h2>
+                <ul *ngIf="isSmallMovieClicked" class="p-0 ">
+                    <li routerLink="movie" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Popular</p>
+                    </li>
+                    <li routerLink="movie/top-rated" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Top Rated</p>
+                    </li>
+                    <li routerLink="movie/upcoming" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Upcoming</p>
+                    </li>
+                    <li routerLink="movie/now-playing" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Now Playing</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="pt-3">
+                <h2 class="pointer" (click)="isSmallTVClicked=!isSmallTVClicked">TV Shows</h2>
+                <ul *ngIf="isSmallTVClicked" class="p-0">
+                    <li routerLink="tv" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Popular</p>
+                    </li>
+                    <li routerLink="tv/airing-today" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Airing Today</p>
+                    </li>
+                    <li routerLink="tv/on-tv" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>On TV</p>
+                    </li>
+                    <li routerLink="tv/top-rated" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Top Rated</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="py-3">
+                <h2 class="pointer" (click)="isSmallPeopleClicked=!isSmallPeopleClicked">People</h2>
+                <ul *ngIf="isSmallPeopleClicked" class="p-0">
+                    <li routerLink="/person" (click)="smallNavBtnToggle=!smallNavBtnToggle" class="pointer">
+                        <p>Popular People</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

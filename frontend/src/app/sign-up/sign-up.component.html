@@ -1,0 +1,66 @@
+<div class="container d-flex justify-content-center align-items-center py-5">
+    <div class="register-container border rounded p-4">
+        <div>
+
+            <h1 class="h2 fw-bold">Create account</h1>
+            <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm(registerForm)">
+                <div class="mb-3">
+                    <!-- userName, email, password, country, gender, birthDate -->
+                    <label for="userName" class="fw-bold">Your name</label>
+                    <input type="text" formControlName="userName" class="form-control" id="userName">
+                    <div *ngIf="registerForm.get('userName')?.errors != null 
+                    && registerForm.get('userName')?.touched" class="alert alert-danger p-1 mt-1">
+                        <p *ngIf="registerForm.get('userName')?.errors?.['required']">Name is required</p>
+                        <p *ngIf="registerForm.get('userName')?.errors?.['minlength']">Name minLength is 3</p>
+                        <p *ngIf="registerForm.get('userName')?.errors?.['maxlength']">Name maxLength is 10</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <!-- userName, email, password, country, gender, birthDate -->
+                    <label for="email" class="fw-bold">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="email">
+                    <div *ngIf="registerForm.get('email')?.errors != null 
+                    && registerForm.get('email')?.touched" class="alert alert-danger p-1 mt-1">
+                        <p *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</p>
+                        <p *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format</p>
+                    </div>
+                    
+
+                </div>
+                <div class="mb-3">
+                    <!-- userName, email, password, country, gender, birthDate -->
+                    <label for="password" class="fw-bold">Password</label>
+                    <input type="password" formControlName="password" class="form-control" id="password">
+                    <div *ngIf="registerForm.get('password')?.errors != null 
+                    && registerForm.get('password')?.touched" class="alert alert-danger p-1 mt-1">
+                        <p *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</p>
+                        <p *ngIf="registerForm.get('password')?.errors?.['pattern']">Password must start with capital char or number, and minLength is 3</p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <!-- userName, email, password, country, gender, birthDate -->
+                    <label for="cPassword" class="fw-bold">Re-enter password</label>
+                    <input type="password" formControlName="cPassword" class="form-control" id="cPassword">
+                    <div *ngIf="(registerForm.get('cPassword')?.errors != null || registerForm.value.password != registerForm.value.cPassword)
+                    && registerForm.get('cPassword')?.touched" class="alert alert-danger p-1 mt-1">
+                        <p *ngIf="registerForm.get('cPassword')?.errors?.['required']">Confirm password is required</p>
+                        <p *ngIf="registerForm.value.password != registerForm.value.cPassword">Confirm password doesn't match password</p>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="registerForm.invalid || registerForm.value.password != registerForm.value.cPassword" class="btn btn-primary  w-100">Create your TMDB account</button>
+                <div *ngIf="error"  class="alert alert-danger p-1 mt-1">
+                    <p>Email already exists</p>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="divider position-relative d-flex justify-content-center w-100 mt-4 mb-3">
+                <span class="fw-bold ">or</span>
+            </div>
+            <div>
+                <h6>Already have an account? <span routerLink="/signIn" class="sign-in-btn pointer fw-bold">Sign in</span></h6>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
