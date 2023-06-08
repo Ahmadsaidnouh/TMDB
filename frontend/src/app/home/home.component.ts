@@ -10,31 +10,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // customOptions: OwlOptions = {
-  //   loop: false,
-  //   mouseDrag: false,
-  //   touchDrag: true,
-  //   pullDrag: false,
-  //   dots: false,
-  //   navSpeed: 700,
-  //   navText: ['', ''],
-  //   lazyLoad: true,
-  //   responsive: {
-  //     0: {
-  //       items: 3
-  //     },
-  //     400: {
-  //       items: 5
-  //     },
-  //     740: {
-  //       items: 5
-  //     },
-  //     940: {
-  //       items: 7
-  //     }
-  //   },
-  //   nav: true
-  // }
+
 
   isSignedIn:boolean = false;
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500';

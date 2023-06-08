@@ -4,11 +4,9 @@ const userModel = require("../DB/models/user.model");
 const auth = (type) => {
     return async (req, res, next) => {
         const tokenHeader = req.headers["authorization"];
-        // console.log(tokenHeader);
         if(tokenHeader) {
             if (tokenHeader.startsWith("Bearer")) {
                 const token = tokenHeader.split(" ")[1];
-                // console.log(token);
                 try {
                     const user = jwt.verify(token, process.env.SECRET_KEY);
                     if(user.isLoggedIn) {

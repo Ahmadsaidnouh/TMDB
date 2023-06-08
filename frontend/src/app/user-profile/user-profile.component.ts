@@ -12,18 +12,10 @@ export class UserProfileComponent implements OnInit {
   constructor(private _AuthService: AuthService) { }
   
   ngOnInit(): void {
-    // console.log("initn");
     this._AuthService.userData.subscribe(() => {
       this.user = this._AuthService.userData.getValue();
       this.user = this.user ? this.user.user : null;
       console.log("user = ", this.user);
-      // this.getJoinDate()
-      // if (this._AuthService.userData.getValue() != null) {
-      // }
-      // else {
-      //   this.user = false;
-
-      // }
     })
   }
 

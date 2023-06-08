@@ -1,5 +1,4 @@
 .background-img {
-    /* margin-top: 68px; */
     height: calc(100vh - 68px);
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,16 +17,9 @@
 .rate {
     width: 70px;
     height: 70px;
-    /* background: conic-gradient(#7d2ae8 90deg, #ededed 0); */
     background-color: black;
     border-radius: 50%;
-    /* position: relative;  */
-    /* left: 10px; */
-    /* top: -17px; */
     border: green 5px solid;
-    /* z-index: 1000; */
-    /* background: rgb(0,138,139); */
-    /* background: radial-gradient(45%, rgba(0,138,139,1) 0%, rgba(77,0,79,1) 0%); */
 }
 
 .percent {
@@ -60,15 +52,10 @@
 .option-list span {
     background-color: #032541;
     display: none;
-    /* display: block;
-    opacity: 0;
-    transition: opacity 0.2s ease; */
 }
 
 .option-list:hover span {
-    /* background-color: #032541; */
     display: block;
-    /* opacity: 1; */
 }
 
 .img-width {
@@ -84,7 +71,6 @@
 @media screen and (max-width:991px) {
     .background-filter {
         height: max-content !important;
-        /* background: rgba(0, 0, 0, 0) !important; */
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 1) 65%) !important;
     }
 }

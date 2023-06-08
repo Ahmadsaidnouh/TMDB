@@ -8,80 +8,7 @@
         </div>
     </div>
 </header>
-<!-- <section class="mt-1 position-relative">
-    <div class="position-absolute filter trending">
-
-    </div>
-    <div class="container-fluid px-md-5 px-3 pt-3 ">
-        <div class="pb-2 d-flex align-items-center">
-            <h3 class="fw-bold me-3">Trending</h3>
-            <div class="dg-danger time-window-container d-flex overflow-hidden">
-                <span (click)="changeTimeWindow($event)"
-                    class="time-window-active px-3 pt-1 fw-bold pointer">Today</span>
-                <span (click)="changeTimeWindow($event)" class="px-3 pt-1 fw-bold pointer">This Week</span>
-            </div>
-        </div>
-        <owl-carousel-o [options]="customOptions">
-
-            <ng-container *ngFor="let movie of trendingMovies">
-                <ng-template carouselSlide [id]="movie.id">
-                    <div class="me-3 rounded overflow-hidden">
-                        <div>
-                            <img (click)="displayMovieDetails(movie.id, movie.title)" class="rounded pointer"
-                                loading="lazy" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt"
-                                [title]="movie.title">
-                        </div>
-                        <div>
-                            <div class="rate d-flex justify-content-center align-items-center">
-                                <p class="text-white m-0 movie-vote position-relative">{{ceil(movie.vote_average*10)}}
-                                    <small class="percent position-absolute top-0">%</small></p>
-                            </div>
-                        </div>
-                        <span (click)="displayMovieDetails(movie.id, movie.title)"
-                            class="px-2 text-black  pointer movie-title">{{movie.title}}</span>
-                        <span class="px-2 mt-1 text-muted date">{{reformatReleaseDate(movie.release_date)}}</span>
-                    </div>
-                </ng-template>
-            </ng-container>
-
-        </owl-carousel-o>
-    </div>
-</section> -->
-
-
-<!-- <section class="mt-1 position-relative">
-    <div class="position-absolute filter trending">
-
-    </div>
-    <div class="container-fluid px-md-5 px-3 pt-3 ">
-        <div class="pb-2 d-flex align-items-center">
-            <h3 class="fw-bold me-3">Trending</h3>
-            <div class="dg-danger time-window-container d-flex overflow-hidden">
-                <span (click)="changeTimeWindow($event)"
-                    class="time-window-active px-3 pt-1 fw-bold pointer">Today</span>
-                <span (click)="changeTimeWindow($event)" class="px-3 pt-1 fw-bold pointer">This Week</span>
-            </div>
-        </div>
-        <div class="me-3 rounded overflow-hidden">
-            <div>
-                <img (click)="displayMovieDetails(movie.id, movie.title)" class="rounded pointer" loading="lazy"
-                    [src]="imgPrefix+movie.poster_path" [alt]="movie.alt" [title]="movie.title">
-            </div>
-            <div>
-                <div class="rate d-flex justify-content-center align-items-center">
-                    <p class="text-white m-0 movie-vote position-relative">{{ceil(movie.vote_average*10)}} <small
-                            class="percent position-absolute top-0">%</small></p>
-                </div>
-            </div>
-            <span (click)="displayMovieDetails(movie.id, movie.title)"
-                class="px-2 text-black  pointer movie-title">{{movie.title}}</span>
-            <span class="px-2 mt-1 text-muted date">{{reformatReleaseDate(movie.release_date)}}</span>
-        </div>
-    </div>
-</section> -->
 <section class="my-1 position-relative">
-    <!-- <div class="position-absolute filter trending">
-    </div> -->
     <div class="container-fluid px-md-5 px-3 pt-3">
         <div class="pb-2 d-flex align-items-center">
             <h3 class="fw-bold me-3">Trending</h3>
@@ -116,7 +43,6 @@
                             [src]="imgPrefix+movie.poster_path" [alt]="movie.alt" [title]="movie.title">
                     </div>
                     <div>
-                        <!-- <i class="rate-star fa-solid fa-star"></i> -->
                         <div class="rate d-flex justify-content-center align-items-center">
                             <p class="text-white m-0 movie-vote position-relative">{{ceil(movie.vote_average*10)}} <small
                                     class="percent position-absolute top-0">%</small></p>

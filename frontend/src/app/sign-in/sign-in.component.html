@@ -4,12 +4,10 @@
             <h1 class="h2 fw-bold">Sign in</h1>
             <div  *ngIf="!displaySignInForm" class="d-flex flex-column justify-content-center align-items-center">
                 <button (click)="displaySignInForm=true;" class="btn btn-light border w-100 mt-3 my-2">Sign in with TMDB</button>
-                <!-- <button class="btn btn-light border w-100">Sign in with Google</button> -->
                 <asl-google-signin-button *ngIf="!loggedIn" type="standard" size="medium" color="warn" (click)="signInWithGoogle()"></asl-google-signin-button>
             </div>
             <form *ngIf="displaySignInForm" [formGroup]="signInForm" (ngSubmit)="submitSignInForm(signInForm)">
                 <div class="mb-3">
-                    <!-- userName, email, password, country, gender, birthDate -->
                     <label for="email" class="fw-bold">Email</label>
                     <input type="email" formControlName="email" class="form-control" id="email">
                     <div *ngIf="signInForm.get('email')?.errors != null 
@@ -19,7 +17,6 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <!-- userName, email, password, country, gender, birthDate -->
                     <label for="password" class="fw-bold">Password</label>
                     <input type="password" formControlName="password" class="form-control" id="password">
                     <div *ngIf="signInForm.get('password')?.errors != null 
@@ -45,5 +42,3 @@
     </div>
 </div>
 <app-footer></app-footer>
-<!-- <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button> -->
-<!-- <asl-google-signin-button *ngIf="!loggedIn" color="warn" class="btn btn-light border w-100" (click)="signInWithGoogle()">Login</asl-google-signin-button> -->

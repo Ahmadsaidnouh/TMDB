@@ -20,10 +20,6 @@ export class PersonComponent implements OnInit {
   ngOnInit(): void {
     
     this.getPeople(this.pageNumber)
-    // let param = this._ActivatedRoute.snapshot.paramMap.get("category")?.replace("-", "_");
-    // console.log(this._ActivatedRoute.snapshot.paramMap.get("category"));
-    // this._Router
-    // this.getTvShows(this.category, this.pageNumber)
     this._AuthService.userData.subscribe(() => {
       if (this._AuthService.userData.getValue() != null) {
         this.isSignedIn = true;

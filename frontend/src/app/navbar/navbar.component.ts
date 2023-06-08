@@ -36,7 +36,6 @@ export class NavbarComponent implements OnInit {
   }
 
   signOut() {
-    // this.smallProfileInfoToggle=!this.smallProfileInfoToggle;
     this._AuthService.signOut();
   }
 

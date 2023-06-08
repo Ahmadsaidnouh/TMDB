@@ -26,18 +26,15 @@ export class SignUpComponent implements OnInit {
   submitRegisterForm(registerForm: FormGroup) {
     
     console.log(registerForm.valid, "valid = ")
-    // console.log(registerForm);
     if (registerForm.valid) {
       this._AuthService.register(registerForm.value).subscribe({
         next: (response) => {
           this.error = false;
           if (response.message == "Success") {
-            // console.log("success");
             this._Router.navigate(['signIn'])
           }
         },
         error: (error) => {
-          // console.error('error caught in component')
           this.error = true;
         }
       })

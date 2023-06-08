@@ -92,7 +92,6 @@
                         <div class="pointer position-relative">
                             <i (click)="smallProfileInfoToggle=!smallProfileInfoToggle"
                                 class="fa-solid fa-user text-white fs-5"></i>
-                            <!-- <img src="" alt=""> user profile pic -->
                             <div *ngIf="smallProfileInfoToggle" class="position-absolute user-info">
                                 <ul class="overflow-hidden bg-white rounded border px-0 prevent-select">
                                     <li *ngIf="!isSignedIn" routerLink="/signIn" (click)="smallProfileInfoToggle=!smallProfileInfoToggle" class="text-muted p-3 border-bottom">Sign In</li>
@@ -125,7 +124,6 @@
         </div>
     </div>
     <div *ngIf="smallNavBtnToggle" class="w-100 small-dropdown px-3">
-        <!-- movies, tv shows, people -->
         <ul class="small-nav-content prevent-select">
             <li class="pt-3">
                 <h2 class="pointer" (click)="isSmallMovieClicked=!isSmallMovieClicked">Movies</h2>

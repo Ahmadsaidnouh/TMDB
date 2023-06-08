@@ -37,14 +37,8 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre("save", function(next) {
     if(this.password) {
-        // this.password = bcrypt.hashSync(this.password, parseInt(process.env.SALT));
-        // this.accountType = "native";
         this.password = CryptoJs.AES.encrypt(this.password, process.env.SECRET_KEY).toString();
     }
-    // else {
-    //     this.accountType = "native";
-
-    // }
     this.userId = this.userName.replaceAll(" ", "").toLowerCase() + "-" + this._id.toString();
 
     next();
